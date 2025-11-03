@@ -1,7 +1,8 @@
 package com.example.algos;
 
-import com.example.algos.polindrom.BubleSort;
-import com.example.algos.polindrom.Palindrome;
+import com.example.algos.solution.BubleSort;
+import com.example.algos.solution.Palindrome;
+import com.example.algos.solution.TwoSum;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -15,10 +16,11 @@ public class AlgosApplication {
 
         while (true) {
 
+            System.out.println("0 выход");
             System.out.println("Выберите число для действия:");
             System.out.println("1 палиндром");
             System.out.println("2 пузырьковая сортировка массива");
-            System.out.println("0 выход");
+            System.out.println("3 нахождение суммы двух чисел по таргету");
             Scanner scanner = new Scanner(System.in);
             String scan = scanner.nextLine();
             try {
@@ -29,6 +31,8 @@ public class AlgosApplication {
                     new Palindrome().poli();
                 } else if (number == 2) {
                     new BubleSort().bubleSort();
+                } else if (number == 3){
+                    new TwoSum().twoSumTarget();
                 }
 
             } catch (NumberFormatException e) {

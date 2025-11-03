@@ -1,4 +1,4 @@
-package com.example.algos.polindrom;
+package com.example.algos.solution;
 
 import java.util.Scanner;
 
