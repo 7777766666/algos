@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 public class BubleSort {
 
-    //    Integer[] bubleArray = new Integer[]{3};
     Integer[] bubleArray = new Integer[]{3, 6, 2, 100, 16};
 
     public void bubleSort() {
