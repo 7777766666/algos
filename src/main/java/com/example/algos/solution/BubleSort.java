@@ -1,6 +1,5 @@
-package com.example.algos.polindrom;
+package com.example.algos.solution;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -20,7 +19,6 @@ public class BubleSort {
                     break;
                 }
                 String[] split = array.split(" ");
-                System.out.println(split.length + " Длина");
                 Integer[] arr = new Integer[split.length];
                 for (int i = 0; i < arr.length; i++) {
                     arr[i] = Integer.parseInt(split[i]);
