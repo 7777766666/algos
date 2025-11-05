@@ -1,22 +1,35 @@
 package com.example.algos;
 
-import com.example.algos.lesson.Lambda;
-import com.example.algos.solution.BubleSort;
-import com.example.algos.solution.Palindrome;
-import com.example.algos.solution.SearchInsert;
-import com.example.algos.solution.TwoSum;
-import org.springframework.boot.SpringApplication;
+import com.example.algos.Lambda.Increment;
+import com.example.algos.Lambda.Lambda;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
-import java.util.Scanner;
+import java.util.stream.Collectors;
 
 @SpringBootApplication
 public class AlgosApplication {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
+
+        System.out.println(new Lambda().incr("199", 6));
+        System.out.println(new Lambda().incr("10000", 1000));
+
+        List<String> list = Arrays.asList("1,2,3", "4,5,6,7", "7,8,9");
+
+        System.out.println(new Lambda().lolReturn());
+        System.out.println(new Lambda().lolReturn());
+
+        list.stream()
+                .flatMap(str -> Arrays.stream(str.split(",")))
+                .mapToInt(Integer::parseInt)
+                .sum();
+
+
+
 
         new Lambda().start();
         new Lambda().checkMore0();

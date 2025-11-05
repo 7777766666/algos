@@ -1,11 +1,9 @@
-package com.example.algos.lesson;
+package com.example.algos.Lambda;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Lambda {
 
@@ -19,6 +17,23 @@ public class Lambda {
 
     public Integer plusInt(){
         return stringInt((x, y) -> Integer.parseInt(x) + y);
+    }
+    private Integer stringInt(StringPlusInt<String, Integer> plusIntString){
+        return plusIntString.plusInt("77", 33);
+    }
+
+    public Integer incr (String x, Integer y){
+         Increment<Integer, String> increment = ( (a, v) -> Integer.parseInt(v) + a);
+         return increment.inc(y, x);
+    }
+
+    public String lolReturn(){
+        ReturnLol<String> func = ( () -> "Lol");
+        return func.lol();
+    }
+
+    private Integer increment(Increment<Integer, Integer> lam, Integer x, Integer y ){
+        return lam.inc(x, y);
     }
 
     public Boolean more100(Integer x){
@@ -41,6 +56,8 @@ public class Lambda {
                 .sum();
     }
 
+
+
     private void doMath(Convertable<Integer, String> convert) {
         System.out.println(convert.convert(9));
     }
@@ -49,7 +66,5 @@ public class Lambda {
         System.out.println(test.test(-97));
 
     }
-    private Integer stringInt(StringPlusInt<String, Integer> plusIntString){
-        return plusIntString.plusInt("77", 33);
-    }
+
 }
