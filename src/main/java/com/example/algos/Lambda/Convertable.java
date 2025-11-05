@@ -1,4 +1,4 @@
-package com.example.algos.lesson;
+package com.example.algos.Lambda;
 
 @FunctionalInterface
 public interface Convertable<T, R> {
