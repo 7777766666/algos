@@ -14,12 +14,12 @@ public class NotifyThread implements Runnable{
         log.info(" Start NotifyThread {}", Thread.currentThread().getName());
 
             try {
-                log.info("Thread NotifyThread {} sleep 5 second", Thread.currentThread().getName());
-                Thread.sleep(5000);
+                log.info("Thread NotifyThread {} sleep 1 second", Thread.currentThread().getName());
+                Thread.sleep(1000);
                 synchronized (message){
                     message.setMessage("Thread Notifier worked success");
-//                    message.notify();  //Так поток ThreadSecond2 не отработает, так как монитор будет возвращен в Thread1
-                    message.notifyAll();
+//                    message.notify();
+                    message.wait();
                     log.info("Return monitor");
                 }
 

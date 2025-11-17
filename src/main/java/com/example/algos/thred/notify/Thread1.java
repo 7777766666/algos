@@ -21,9 +21,14 @@ public class Thread1 implements Runnable{
         synchronized (message) {
             try {
                 log.info("Wait call notify and messege is {}", message.getMessage());
+                log.info("MONITOR TREAD1");
                 message.wait();
+                log.info("MONITOR AGAIN TREAD1");
+                log.info("from thread 1");
                 message.setMessage("Message from thread 1");
+                message.notify();
                 log.info("Return monitor");
+
 
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);

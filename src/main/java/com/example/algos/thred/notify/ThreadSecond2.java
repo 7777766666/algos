@@ -17,16 +17,15 @@ public class ThreadSecond2 implements Runnable{
 
                 log.info("Thread2 {} sleep 10 seconds ", Thread.currentThread().getName());
 
-                Thread.sleep(10000);
+                Thread.sleep(3000);
                 synchronized (message) {
                 message.setMessage("7777777777777777777777777");
-                message.notifyAll();
-                log.info("Thread2 finish");
+                message.notify();
+                log.info("Return monitor");
             }
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        log.info("Return monitor");
 
     }
     public ThreadSecond2(Message message) {
