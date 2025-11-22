@@ -24,8 +24,10 @@ public class AlgosApplication {
     public static void main(String[] args) throws InterruptedException {
 
 
-        ConfigurableApplicationContext comtext = SpringApplication.run(AlgosApplication.class, args);
-        System.out.println(comtext.getBean(Chek.class) + "!!!!!!!!!!!!!!!");
+        ConfigurableApplicationContext context = SpringApplication.run(AlgosApplication.class, args);
+        Object quolify = context.getBean("quolify");
+        System.out.println(quolify);
+        System.out.println(context.getBean(Chek.class));
 
 
         List<People> listPeople = Arrays.asList(

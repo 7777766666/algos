@@ -4,3 +4,7 @@ spring:
 
 check:
   meassage: "Message from Value"
+
+quol:
+  xx: "Class XXX"
+  yy: "Class YYY"
