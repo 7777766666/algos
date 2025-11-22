@@ -5,9 +5,13 @@ import com.example.algos.model.People;
 import com.example.algos.model.PeopleComparator;
 import com.example.algos.model.Sex;
 import com.example.algos.solution.SubStringIndex;
+import com.example.algos.value.Chek;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 
 import java.util.*;
 import java.util.stream.Stream;
@@ -18,6 +22,10 @@ public class AlgosApplication {
     private static final Logger log = LoggerFactory.getLogger(AlgosApplication.class);
 
     public static void main(String[] args) throws InterruptedException {
+
+
+        ConfigurableApplicationContext comtext = SpringApplication.run(AlgosApplication.class, args);
+        System.out.println(comtext.getBean(Chek.class) + "!!!!!!!!!!!!!!!");
 
 
         List<People> listPeople = Arrays.asList(
