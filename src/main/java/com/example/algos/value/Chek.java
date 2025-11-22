@@ -24,9 +24,7 @@ public class Chek {
 
     @Override
     public String toString() {
-        return "Chek{" +
-                "name='" + name + '\'' +
-                '}';
+        return name;
     }
 
     public void setName(String name) {
